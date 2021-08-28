@@ -7,4 +7,4 @@ function checkPolindrom(newString) {
     }
     return true;
 }
-console.log(checkPolindrom("ТопОт"));
+console.log(checkPolindrom("ааыва"));
