@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Интерактивное программирование!</title>
+</head>
+<body>
+<h1 id="heading">Привет, мир!</h1>
+
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+
+<script>
+var leftOffset = 0;
+var topOffset = 0;
+var rightOffset = 200;
+var lowOffset = 200;
+var clicks = 0; 
+var speed = 15;
+function moveHeading() {
+	if (leftOffset <= 200) {
+		$("#heading").offset({left: leftOffset});
+		leftOffset++;
+	} else if (topOffset <= 200) {
+		$("#heading").offset({top: topOffset});
+		topOffset++;
+	} else if (rightOffset > 0) {
+		$("#heading").offset({left: rightOffset});
+		rightOffset--;
+	} else if (lowOffset > 0) {
+		$("#heading").offset({top: lowOffset});
+		lowOffset--;
+	} else {leftOffset = 0;
+			topOffset = 0;
+			rightOffset = 200;
+			lowOffset = 200;}
+};
+var firstStart = setInterval(moveHeading, speed);
+var Click = function (event) {
+clicks++;
+speed *= 0.9;
+$("#heading").text (clicks);
+clearInterval(firstStart);
+firstStart = setInterval(moveHeading, speed);
+if (clicks>=20) {
+$("#heading").text ("ГЦ, ты победил");
+clearInterval(firstStart);}};
+$("#heading").click(Click);
+
+</script>
+
+</body>
+</html>

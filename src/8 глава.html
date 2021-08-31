@@ -1,0 +1,72 @@
+ < !DOCTYPE html >
+ < html >
+ < head >
+ < meta charset = "UTF-8" >
+     < title > Глава 8 <  / title >
+     <  / head >
+
+     < script >
+    var pickWord = function () {
+    var RandomWord = ["сосиска", "ананас", "банан", "трюфель", "свинюшка"];
+    return RandomWord[Math.floor(Math.random() * RandomWord.length)]
+};
+function setupAnswerArray(word) {
+    var Array1 = [];
+    for (var i = 0; i < word.length; i++) {
+        Array1[i] = "_";
+    }
+    return Array1
+};
+function showPlayerProgress(answerArray) {
+    alert(answerArray.join(" "))
+};
+var getGuess = function () {
+    return prompt("Введите букву");
+};
+var updateGameState = function (guess, word, answerArray) {
+    var repeatCount = 0;
+    for (var j = 0; j < word.length; j++) {
+        if (word[j] == guess) {
+            answerArray[j] = guess;
+            repeatCount++;
+        }
+    }
+    return repeatCount;
+};
+var showAnswerAndCongratulatePlayer = function (answerArray) {
+    alert("ГЦ, я реально загадал " + answerArray.join("") + "!!!");
+}
+
+// word: загаданное слово
+var word = pickWord();
+// answerArray: итоговый массив
+var answerArray = setupAnswerArray(word);
+// remainingLetters: сколько букв осталось угадать
+var remainingLetters = word.length;
+while (remainingLetters > 0) {
+    showPlayerProgress(answerArray);
+    // guess: ответ игрока
+    var guess = getGuess();
+    if (guess === null) {
+        break;
+    } else if (guess.length !== 1) {
+        alert("Пожалуйста, введите одиночную букву.");
+    } else {
+        // correctGuesses: количество открытых букв
+        var correctGuesses = updateGameState(guess, word, answerArray);
+        remainingLetters -= correctGuesses;
+    }
+}
+showAnswerAndCongratulatePlayer(answerArray);
+ <  / script >
+
+//function AreArraysSame(Array1, Array2) {
+//	if (Array1.length !== Array2.length) {
+//		return false;}
+//	for (var i = 0; i < Array1.length; i++) {
+//	if (Array1[i] !== Array2[i]) {
+//	return false;}
+//	return true}};
+//console.log(AreArraysSame([1, 2, 3], [4, 5, 6]));
+//console.log(AreArraysSame([1, 2, 3], [1, 2, 3]));
+//console.log(AreArraysSame([1, 2, 3], [1, 2, 3, 4]));

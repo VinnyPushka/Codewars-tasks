@@ -4,4 +4,5 @@ const object1 = {
     c: 3,
 };
 
-console.log(Object.getOwnPropertyNames(object1));
+//console.log(Object.getOwnPropertyNames(object1));
+console.log(Object.values(object1));

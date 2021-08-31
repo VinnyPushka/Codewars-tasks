@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Страниченька</title>
+<head>
+<body>
+
+</body>
+<script>
+var words = [];
+	words.push("сосиска");
+	words.push("сарделька");
+	words.push("дверь");
+	words.push("хозяйство");
+	words.push("абориген");
+	words.push("каламбур");
+var word = words[Math.floor(Math.random()*words.length)];
+var answerArray = [];
+for (var i = 0; i < word.length; i++) {
+	answerArray[i]= "_";
+}
+var remainingLetters = word.length;
+var remainingTries = 5; 
+
+while (remainingLetters > 0) {
+	alert(answerArray.join(" ") + "     " + remainingLetters + " букв надо угадать");
+	if (remainingTries == 0) {
+		break;
+	} else {
+	var guess = prompt ("Букву угадай или нажми Отмену, чтобы уйти");
+	guess = guess.toLowerCase ();
+	if (guess === null) {
+		break;
+	} else if (guess.length !== 1) { 
+		alert ("Введи только одну букву. Пожалуйста!"); 
+	} else { 
+		for (var k = 0; k < word.length; k++) {
+			if (answerArray[k] === guess) {
+			alert("Ты уже говорил такую букву T_T")
+			} else { for (var j = 0; j < word.length; j++) { 
+					if (word[j] === guess) {
+					answerArray[j]=guess;
+					remainingLetters --;
+					alert("Есть такая буква в этом слове!");
+					}
+				}
+			}
+	}
+	
+	remainingTries --;
+	}
+}
+}
+if (remainingLetters == 0) {
+	alert(answerArray.join(" "));
+	alert("Гц, я реально загадал " + word + "!!!");
+} else if (remainingTries == 0) {
+	alert("Ну все, попытки кончились");
+} else {alert("Ну и до свидания");}
+</script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+      
+    <title>Document</title>
+</head>
+<body>
+   
+    <pre id="contents"></pre>
+    <input type="file" id="filechoice" />
+<script>
+
+document
+    .getElementById('filechoice')
+    .addEventListener(
+        'change',
+        function () {
+            var fr = new FileReader();
+            fr.onload = function () {
+                document.getElementById('contents').textContent = this.result;
+            };
+            fr.readAsText(this.files[0]);
+        }
+    );
+</script>
+<script src = 'Project Rostel.js'></script>
+</body>
+</html>

@@ -14,7 +14,7 @@ async function asyncExample() {
         const data = await getData();
         console.log("Data", data);
     } catch (e) {
-        console.log(e);
+        console.error(e);
     } finally {
         console.log("как-то закончили");
     }
