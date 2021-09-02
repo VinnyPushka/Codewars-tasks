@@ -12,3 +12,8 @@ function uniqueElement(text) {
     return count;
 }
 console.log(duplicateCount("aabbcde"));
+
+//! Или :
+
+const nums = [1, 2, 3, 4, 5, 6, 6, 7, 8, 8, 5];
+const uniqNums = [...new Set(nums)];
