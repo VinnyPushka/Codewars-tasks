@@ -1,9 +1,12 @@
 function switcheroo(x) {
-    let y = x.split('');
-    for (let i = 0; i < y.length; i++){
-      (y[i]=='a') ? (y[i] = 'b') :
-      (y[i]=='b') ? (y[i] = 'a') : y[i] = 'c'
+    let arr = x.split("");
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] == "a"
+            ? (arr[i] = "b")
+            : arr[i] == "b"
+            ? (arr[i] = "a")
+            : (arr[i] = "c");
     }
-      return y.join('');
-    }
-    console.log (switcheroo('accaabbcaacaabbaa'))
+    return arr.join("");
+}
+console.log(switcheroo("accaabbcaacaabbaa"));

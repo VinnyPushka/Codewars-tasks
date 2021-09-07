@@ -37,7 +37,7 @@ function intersection(a, b) {
         }
     }
     for (let j in obj) {
-        if (obj[j] > 1) array.push(j);
+        if (obj[j] > 1) array.push(+j);
     }
     return array;
 }
