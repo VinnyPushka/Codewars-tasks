@@ -1,7 +1,9 @@
+"use strict";
+
 function DLE(str) {
-    ans = [];
-    curAns = str[0];
-    curPos = 0;
+    let ans = [];
+    let curAns = str[0];
+    let curPos = 0;
 
     for (let i = 1; i <= str.length; i++) {
         if (str[i] !== curAns) {
@@ -16,4 +18,4 @@ function DLE(str) {
 
     return ans.join("");
 }
-console.log(DLE("FFAA"));
+console.log(DLE("FAAaaaCCCaTT"));

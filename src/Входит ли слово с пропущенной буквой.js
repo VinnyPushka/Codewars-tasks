@@ -1,8 +1,11 @@
-function isIn(str) {
+function isIn(a, b) {
     let arr = [];
-    for (let i = 0; i < str.length; i++) {
-        arr.push(str.slice(0, i) + str.slice(i + 1));
+    for (let i = 0; i < a.length; i++) {
+        arr.push(a.slice(0, i) + a.slice(i + 1));
     }
+    return arr.includes(b);
 }
-console.log(arr);
-let str = "Некоторая строка";
+
+let a = "Некоторая строка";
+let b = "екоторая строка";
+console.log(isIn(a, b));

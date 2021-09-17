@@ -1,17 +1,14 @@
-var obj = {
-    fn1: function () {
-        console.log(this);
-    },
-    fn2: () => {
-        console.log(this);
-    },
-};
+function findDublicates(arr) {
+    let unique = {};
+    arr.forEach((element) => {
+        unique[element] ? unique[element]++ : (unique[element] = 1);
+    });
 
-var fn1 = obj.fn1;
-var fn2 = obj.fn2;
+    for (let el in unique) {
+        if (unique[el] === 1) return el;
+    }
+}
 
-obj.fn1(); //
-obj.fn2(); //
+let array = [1, 2, 3, 4, 9, 3, 8, 1, 2, 9, 8];
 
-fn1(); //
-fn2(); //
+console.log(findDublicates(array));

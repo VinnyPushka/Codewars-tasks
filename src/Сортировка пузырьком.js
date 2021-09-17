@@ -1,6 +1,6 @@
-var m = [1, 7, 5, 13, 8],
-    count = m.length - 1,
-    max;
+var m = [1, 7, 5, 13, 8];
+count = m.length - 1;
+let max;
 for (var i = 0; i < count; i++) {
     for (var j = 0; j < count - i; j++) {
         if (m[j] > m[j + 1]) {

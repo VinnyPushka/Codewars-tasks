@@ -46,7 +46,9 @@ console.log("Request data...");
 //     .catch((err) => console.error("ERROR!:", err))
 //     .finally(() => console.log("We did it!"));
 
-const sleep = (ms) => new Promise((resolve) => setTimeout(() => resolve(), ms));
+function sleep(ms) {
+    return new Promise((resolve) => setTimeout(() => resolve(), ms));
+}
 
 sleep(3000).then(() => console.log("qq after 3 sec!"));
 sleep(2000).then(() => console.log("qq after 2 sec!"));
@@ -56,6 +58,6 @@ Promise.all([sleep(3000), sleep(2000), sleep(5000)]).then(() =>
     console.log("All promises are done!")
 );
 
-Promise.race([sleep(3000), sleep(2000), sleep(5000)]).then(() =>
-    console.log("First promise is done!")
-);
+// Promise.race([sleep(3000), sleep(2000), sleep(5000)]).then(() =>
+//     console.log("First promise is done!")
+// );

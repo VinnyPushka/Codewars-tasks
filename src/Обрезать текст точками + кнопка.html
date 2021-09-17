@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="horizon">
+            <div class="text">
+                Здесь некоторый текст, очень длинный он должен быть, но вряд ли
+                хватит фантазии написать невероятно большой текст пап авп апв
+                ываыва ываы вы ыв аыв аапываыв ав пккп ы ваы ва ывыв а
+            </div>
+
+            <button style="height: 30px; width: 100px">Кнобка</button>
+        </div>
+
+        <style>
+            .horizon {
+                display: grid;
+                grid-template-columns: 90% 10%;
+                width: 100%;
+            }
+            .text {
+                background: yellow;
+                padding: 10px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        </style>
+    </body>
+</html>
