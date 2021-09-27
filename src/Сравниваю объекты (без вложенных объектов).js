@@ -6,7 +6,7 @@ function isEqual(object1, object2) {
         return false;
     }
 
-    for (let i = 0; i < array1.length; i += 1) {
+    for (let i = 0; i < array1.length; i++) {
         const arrayElem = array1[i];
 
         if (object1[arrayElem] !== object2[arrayElem]) {
