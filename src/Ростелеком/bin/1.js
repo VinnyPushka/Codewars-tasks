@@ -64,7 +64,7 @@ function mutate(text) {
     });
 
     for (let i = 0; i < res.length; i++) {
-        if (res[i].includes("Телефон")) {
+        if (res[i].includes("РўРµР»РµС„РѕРЅ")) {
             res.splice(i, 2);
         }
     }
@@ -162,7 +162,7 @@ function mutate(text) {
     let b = a.addEventListener("click", function () {
         saveAs(
             new Blob([s2ab(wbout)], { type: "application/octet-stream" }),
-            `Ростелеком ${month}.xlsx`
+            `пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ ${month}.xlsx`
         );
     });
 }
